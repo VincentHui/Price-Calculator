@@ -30,7 +30,6 @@ const getRegionFromPostcode = (postcode) =>
   RegexTable.find((regObj) => postcode.match(regObj.regex));
 
 const massageRegion = (region, postcode) => {
-  // const matches = regex.test(region);
   if (CostTable[region]) return { region, cost: CostTable[region] };
   //see if we can match and extract
   const regex = /(Grampian|Highland|Isle of Man|London|Industrial Scotland|Scottish Offshore|Scilly Isles|Isle of Wight|Devon & Cornwall|Jersey|Guernsey|Dyfed & Powys|Northern Ireland)/g;

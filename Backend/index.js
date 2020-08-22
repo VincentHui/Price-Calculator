@@ -3,7 +3,7 @@ const app = express();
 var cors = require("cors");
 const { getRegion } = require("./src/postcode");
 
-//to get this working with the frontend hosted on localhost
+//open cors policy to get this working with the frontend hosted on localhost
 app.use(cors());
 app.get("/", async (req, res) => {
   try {
@@ -12,10 +12,6 @@ app.get("/", async (req, res) => {
   } catch (e) {
     if (e.response.statusText) res.json({ error: e.message });
   }
-});
-
-app.get("/postcode", (req, res) => {
-  res.send("simple post code service");
 });
 
 app.listen(8000, () => {
